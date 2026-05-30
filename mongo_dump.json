@@ -1,0 +1,87 @@
+[
+  {
+    "_id": "6a183f7f6a823e5b127f8ad7",
+    "name": "Rooh-e-khaas",
+    "price": 2399,
+    "compareAtPrice": 3599,
+    "stockQuantity": 10,
+    "image": "https://res.cloudinary.com/df3pf5rhm/image/upload/v1779973991/rabvdtpzdwuwfer5ehvp.jpg",
+    "images": [
+      "https://res.cloudinary.com/df3pf5rhm/image/upload/v1779973991/rabvdtpzdwuwfer5ehvp.jpg",
+      "https://res.cloudinary.com/df3pf5rhm/image/upload/v1779974000/kfiyzfari8s5cgpyy1ez.jpg",
+      "https://res.cloudinary.com/df3pf5rhm/image/upload/v1779974009/ywsicqp1pyl3q5rlgzap.jpg"
+    ],
+    "description": "Rooh-e-Khaas\n\nA fragrance crafted for those who carry elegance in silence and power in presence. Rooh-e-Khaas is a luxurious blend of rich oriental notes, warm woods, and soft florals that leave a lasting impression from the very first spray. Deep, mysterious, and irresistibly refined, this scent captures the essence of royalty and timeless sophistication.\n\nDesigned for both special occasions and everyday luxury, Rooh-e-Khaas wraps you in an aura of confidence, class, and unforgettable charm. Every note unfolds like a story — bold at heart, smooth in character, and addictive in its trail.\n\nA scent not just worn… but remembered.",
+    "category": "Men",
+    "sizes": [
+      {
+        "size": "50ml",
+        "price": "2399",
+        "compareAtPrice": "3599"
+      },
+      {
+        "size": " 3ml",
+        "price": "300",
+        "compareAtPrice": "400"
+      }
+    ],
+    "tags": [
+      "Best Seller"
+    ],
+    "vibe": "Fresh",
+    "details": {
+      "topNotes": [
+        "MUSK"
+      ],
+      "heartNotes": [
+        "Rose",
+        "Sandalwood"
+      ],
+      "baseNotes": [
+        "Oud",
+        "Amber"
+      ]
+    }
+  },
+  {
+    "_id": "6a184294ea3480aa143960c0",
+    "name": "For Him",
+    "price": 2399,
+    "compareAtPrice": 3597,
+    "stockQuantity": 10,
+    "image": "https://res.cloudinary.com/df3pf5rhm/image/upload/v1779974748/kx1ivc4kawapvvugwbvu.jpg",
+    "images": [
+      "https://res.cloudinary.com/df3pf5rhm/image/upload/v1779974748/kx1ivc4kawapvvugwbvu.jpg",
+      "https://res.cloudinary.com/df3pf5rhm/image/upload/v1779974768/zos6a94ldlx3x9uxxycf.jpg"
+    ],
+    "description": "For Him\n\nBold, refined, and undeniably masculine — For Him is a statement of confidence and sophistication. Opening with fresh citrus notes that instantly energize the senses, the fragrance evolves into a rich heart of warm woods, rose, and sensual musk, creating a smooth yet powerful character.\n\nAs it settles, deep oud, amber, and vanilla leave behind a luxurious trail that feels intense, elegant, and unforgettable. Crafted for the modern man who values style, strength, and presence, this fragrance is perfect for evenings, special occasions, and everyday moments that deserve distinction.\n\nFor Him — where luxury meets masculinity.",
+    "category": "Men",
+    "sizes": [
+      {
+        "size": "50ml",
+        "price": "2399",
+        "compareAtPrice": "3599"
+      },
+      {
+        "size": "3ml",
+        "price": "300",
+        "compareAtPrice": "450"
+      }
+    ],
+    "tags": [
+      "New"
+    ],
+    "vibe": "Fresh",
+    "details": {
+      "topNotes": [
+        "Bergamot"
+      ],
+      "heartNotes": [
+        "Rose"
+      ],
+      "baseNotes": [
+        "Oud"
+      ]
+    }
+  }
+]

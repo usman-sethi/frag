@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Bodoni Moda", "Playfair Display", "Georgia", serif;
+
+  --color-brand-black: #0B0B0B;
+  --color-brand-charcoal: #1A1A1A;
+  --color-brand-white: #F5F1E8;
+  --color-brand-cream: #F5F1E8;
+  --color-brand-taupe: #8B6B3F;
+  --color-brand-gold: #D4AF37;
+  --color-brand-text: #F5F1E8;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply bg-brand-black text-brand-white h-full w-full overflow-x-hidden;
+  }
+  
+  body {
+    @apply font-sans bg-brand-black text-brand-text antialiased selection:bg-brand-gold selection:text-white h-full w-full overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-light text-brand-white;
+  }
+
+  /* Accessibility focus styles */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand-gold ring-offset-2 ring-offset-brand-black;
+  }
+}
+
+@layer utilities {
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+  }
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.6);
+  }
+  
+  .scrollbar-custom-light::-webkit-scrollbar-thumb {
+    background: rgba(212, 175, 55, 0.3);
+  }
+  .scrollbar-custom-light::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 175, 55, 0.6);
+  }
+}
+

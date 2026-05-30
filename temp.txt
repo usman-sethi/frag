@@ -1,0 +1,151 @@
+src/pages/AdminSubscribers.tsx:17:        headers: { 'Authorization': `Bearer ${token}` }
+src/pages/AdminSubscribers.tsx:37:    ].map(v => `"${v}"`).join(','));
+src/pages/AdminSubscribers.tsx:43:    link.download = `subscribers_${new Date().toISOString().split('T')[0]}.csv`;
+src/pages/AdminProducts.tsx:46:      `"${p.name || ''}","${p.category || ''}",${p.price || 0},${p.compareAtPrice || 0},"${p.vibe || ''}","${p.tags?.join(', ') || ''}"`
+src/pages/AdminProducts.tsx:111:      const res = await fetch(`/api/products/${deleteProductId}`, {
+src/pages/AdminProducts.tsx:113:        headers: { 'Authorization': `Bearer ${token}` }
+src/pages/AdminProducts.tsx:149:      const url = isEditing ? `/api/products/${isEditing}` : '/api/products';
+src/pages/AdminProducts.tsx:156:          'Authorization': `Bearer ${token}`
+src/pages/AdminProducts.tsx:294:                  <img src={img} alt={`Product ${idx+1}`} className="w-full h-full object-cover" />
+src/pages/AdminProducts.tsx:306:                label={`Upload Image ${images.length + 1}`} 
+src/pages/AdminProducts.tsx:377:                  <td className="py-4 text-sm font-medium">${p.price}</td>
+src/pages/Login.tsx:57:            data = { error: `Invalid response: ${text.substring(0, 40)}` };
+src/pages/Login.tsx:87:            data = { error: `Invalid response: ${text.substring(0, 40)}` };
+src/pages/AdminUsers.tsx:16:        headers: { 'Authorization': `Bearer ${token}` }
+src/pages/AdminUsers.tsx:32:      const res = await fetch(`/api/admin/users/${id}`, {
+src/pages/AdminUsers.tsx:36:          'Authorization': `Bearer ${token}`
+src/pages/AdminUsers.tsx:58:      const res = await fetch(`/api/admin/users/${deleteId}`, {
+src/pages/AdminUsers.tsx:60:        headers: { 'Authorization': `Bearer ${token}` }
+src/pages/AdminUsers.tsx:76:      `"${u._id}","${u.name || 'Guest'}","${u.email || ''}","${u.role || 'user'}"`
+src/pages/Wishlist.tsx:20:          headers: { 'Authorization': `Bearer ${token}` }
+src/pages/Wishlist.tsx:45:        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+src/pages/Wishlist.tsx:69:              <Link to={`/product/${item.productId}`}>
+src/pages/Wishlist.tsx:77:                  <p className="text-sm text-brand-black/60">${item.price}</p>
+src/pages/Category.tsx:20:          if (!res.ok) throw new Error(`API Error ${res.url} ${res.status} ${res.statusText}`);
+src/pages/Category.tsx:45:        <title>{`${categoryName.charAt(0).toUpperCase() + categoryName.slice(1)} | AMR - FRAGRANCES`}</title>
+src/pages/Category.tsx:46:        <meta name="description" content={`Discover our curated collection of fragrances for ${categoryName}.`} />
+src/pages/Category.tsx:77:              <Link key={product.id} to={`/product/${product.id}`} className="group flex flex-col h-full cursor-pointer">
+src/pages/Category.tsx:84:                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${product.images && product.images.length > 1 ? 'opacity-100 group-hover:opacity-0' : 'group-hover:scale-105'}`}
+src/pages/Category.tsx:90:                      alt={`${product.name} alternate view`}
+src/pages/Account.tsx:22:          fetch('/api/auth/me', { headers: { 'Authorization': `Bearer ${token}` } }),
+src/pages/Account.tsx:23:          fetch('/api/orders', { headers: { 'Authorization': `Bearer ${token}` } })
+src/pages/Account.tsx:55:        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+src/pages/Account.tsx:86:              <button onClick={() => setIsEditing(false)} className={`block w-full text-left hover:text-brand-taupe transition-colors py-2 ${!isEditing ? 'border-b border-brand-black' : ''}`}>Order History</button>
+src/pages/Account.tsx:87:              <button onClick={() => setIsEditing(true)} className={`block w-full text-left hover:text-brand-taupe transition-colors py-2 ${isEditing ? 'border-b border-brand-black' : ''}`}>Account Details</button>
+src/pages/Account.tsx:133:                          <p className="text-sm font-medium border border-brand-black/10 px-3 py-1 bg-brand-cream/50">${order.total.toFixed(2)}</p>
+src/pages/Account.tsx:144:                            <p className="ml-auto text-sm text-[#555]">${(item.price * item.quantity).toFixed(2)}</p>
+src/pages/AdminCMS.tsx:55:          'Authorization': `Bearer ${token}`
+src/pages/ProductDetails.tsx:54:      const res = await fetch(`/api/products/${id}/reviews`, {
+src/pages/ProductDetails.tsx:56:        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+src/pages/ProductDetails.tsx:90:      fetch(`/api/products/${id}`)
+src/pages/ProductDetails.tsx:96:          if (!res.ok) throw new Error(`API Error ${res.url} ${res.status} ${res.statusText}`);
+src/pages/ProductDetails.tsx:104:      fetch(`/api/products/${id}/reviews`)
+src/pages/ProductDetails.tsx:110:          if (!res.ok) throw new Error(`API Error ${res.url} ${res.status} ${res.statusText}`);
+src/pages/ProductDetails.tsx:123:          headers: { 'Authorization': `Bearer ${token}` }
+src/pages/ProductDetails.tsx:130:          if (!res.ok) throw new Error(`API Error ${res.url} ${res.status} ${res.statusText}`);
+src/pages/ProductDetails.tsx:155:            'Authorization': `Bearer ${token}`
+src/pages/ProductDetails.tsx:205:        <title>{productData ? `${productData.name} | AMR - FRAGRANCES` : 'Product Details | AMR - FRAGRANCES'}</title>
+src/pages/ProductDetails.tsx:221:                layoutId={`product-image-${productData?._id || 'fallback'}`}
+src/pages/ProductDetails.tsx:249:                         alt={`${productData.name} detail ${idx + 1}`}
+src/pages/ProductDetails.tsx:260:                layoutId={`product-image-${productData?._id || 'fallback'}`}
+src/pages/ProductDetails.tsx:302:                 <Star key={index} className={`w-4 h-4 ${index < Math.round(avgRating) ? 'fill-current' : 'text-gray-300'}`} />
+src/pages/ProductDetails.tsx:348:                       className={`px-8 py-3 text-[11px] uppercase tracking-[0.1em] border transition-colors ${selectedSize === s.size ? 'border-brand-black bg-brand-black text-brand-white' : 'border-brand-black/20 text-brand-black hover:border-brand-black'}`}
+src/pages/ProductDetails.tsx:381:                  name: `${name}${selectedSize ? ` - ${selectedSize}` : ''}`,
+src/pages/ProductDetails.tsx:402:                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+src/pages/ProductDetails.tsx:421:              className={`w-14 h-14 border flex items-center justify-center transition-colors shrink-0 ${isWishlist ? 'border-brand-black/50 text-red-500' : 'border-brand-black/20 text-brand-black hover:border-brand-black'}`}
+src/pages/ProductDetails.tsx:559:                     <Star key={i} className={`w-5 h-5 ${i < 4 ? 'fill-current' : i === 4 ? 'fill-current opacity-50' : 'text-gray-300'}`} />
+src/pages/ProductDetails.tsx:577:                      <div className="h-full bg-brand-gold" style={{ width: `${row.pct}%` }}></div>
+src/pages/ProductDetails.tsx:611:                  <img src={img} alt={`Review photo ${i}`} className="w-full h-full object-cover" />
+src/pages/ProductDetails.tsx:631:                      className={`transition-colors ${(hoverRating || reviewRating) >= star ? 'text-brand-gold' : 'text-gray-300'}`}
+src/pages/ProductDetails.tsx:744:                        <Star key={i} className={`w-4 h-4 ${i < review.rating ? 'fill-current' : 'text-gray-300'}`} />
+src/pages/Checkout.tsx:28:    const phoneRegex = /^\+?[0-9\s\-]{7,15}$/;
+src/pages/Checkout.tsx:33:    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+src/pages/Checkout.tsx:71:          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+src/pages/AdminReviews.tsx:15:        headers: { 'Authorization': `Bearer ${token}` }
+src/pages/AdminReviews.tsx:31:      const res = await fetch(`/api/admin/reviews/${id}`, {
+src/pages/AdminReviews.tsx:35:          'Authorization': `Bearer ${token}`
+src/pages/AdminReviews.tsx:51:      const res = await fetch(`/api/admin/reviews/${id}`, {
+src/pages/AdminReviews.tsx:53:        headers: { 'Authorization': `Bearer ${token}` }
+src/pages/AdminReviews.tsx:95:                      <span className={`text-[10px] uppercase tracking-widest px-2 py-1 rounded ${r.status === 'approved' ? 'bg-green-100 text-green-800' : r.status === 'rejected' ? 'bg-red-100 text-red-800' : 'bg-amber-100 text-amber-800'}`}>
+src/pages/AdminOrders.tsx:20:        headers: { 'Authorization': `Bearer ${token}` }
+src/pages/AdminOrders.tsx:36:      const res = await fetch(`/api/admin/orders/${id}`, {
+src/pages/AdminOrders.tsx:40:          'Authorization': `Bearer ${token}`
+src/pages/AdminOrders.tsx:55:      const res = await fetch(`/api/admin/orders/${id}`, {
+src/pages/AdminOrders.tsx:59:          'Authorization': `Bearer ${token}`
+src/pages/AdminOrders.tsx:76:      const res = await fetch(`/api/admin/orders/${id}`, {
+src/pages/AdminOrders.tsx:78:        headers: { 'Authorization': `Bearer ${token}` }
+src/pages/AdminOrders.tsx:96:        <td style="padding: 8px; border-bottom: 1px solid #ccc;">${item.name} x ${item.quantity}</td>
+src/pages/AdminOrders.tsx:97:        <td style="padding: 8px; border-bottom: 1px solid #ccc; text-align: right;">$${(item.price * item.quantity).toFixed(2)}</td>
+src/pages/AdminOrders.tsx:104:          <title>Invoice - ${order._id}</title>
+src/pages/AdminOrders.tsx:119:              <p>Invoice #${order._id}</p>
+src/pages/AdminOrders.tsx:122:              <p>${new Date(order.createdAt).toLocaleDateString()}</p>
+src/pages/AdminOrders.tsx:127:            <p>${order.shippingInfo?.firstName} ${order.shippingInfo?.lastName}<br/>
+src/pages/AdminOrders.tsx:128:            ${order.shippingInfo?.address}<br/>
+src/pages/AdminOrders.tsx:129:            ${order.shippingInfo?.city}, ${order.shippingInfo?.country} ${order.shippingInfo?.zip}<br/>
+src/pages/AdminOrders.tsx:130:            ${order.shippingInfo?.email}<br/>
+src/pages/AdminOrders.tsx:131:            ${order.shippingInfo?.whatsappNumber ? `WhatsApp: ${order.shippingInfo.whatsappNumber}<br/>` : ''}
+src/pages/AdminOrders.tsx:132:            ${order.shippingInfo?.secondaryNumber ? `Alt: ${order.shippingInfo.secondaryNumber}<br/>` : ''}</p>
+src/pages/AdminOrders.tsx:133:            ${order.shippingInfo?.notes ? `<p><strong>Notes:</strong> ${order.shippingInfo.notes}</p>` : ''}
+src/pages/AdminOrders.tsx:143:              ${itemsHtml}
+src/pages/AdminOrders.tsx:147:            Total: $${order.total?.toFixed(2)}
+src/pages/AdminOrders.tsx:163:      const itemsStr = o.items ? o.items.map((i: any) => `${i.quantity}x ${i.name}`).join('; ') : '';
+src/pages/AdminOrders.tsx:164:      return `"${o._id}","${o.shippingInfo?.firstName} ${o.shippingInfo?.lastName}","${o.shippingInfo?.email}","${o.shippingInfo?.whatsappNumber || ''}","${o.shippingInfo?.secondaryNumber || ''}","${o.shippingInfo?.address}","${o.shippingInfo?.city}","${o.shippingInfo?.country}","${o.shippingInfo?.zip}","${o.shippingInfo?.notes || ''}","${new Date(o.createdAt).toLocaleDateString()}",${o.total?.toFixed(2)},"${o.status}","${o.trackingNumber || ''}","${itemsStr}"`;
+src/pages/AdminOrders.tsx:201:              className={`p-2 transition-colors ${viewMode === 'pipeline' ? 'bg-brand-black/5 text-brand-black' : 'text-brand-black/50 hover:text-brand-black'}`}
+src/pages/AdminOrders.tsx:207:              className={`p-2 transition-colors ${viewMode === 'list' ? 'bg-brand-black/5 text-brand-black' : 'text-brand-black/50 hover:text-brand-black'}`}
+src/pages/AdminOrders.tsx:245:                          <span className="text-xs font-medium">${o.total?.toFixed(2)}</span>
+src/pages/AdminOrders.tsx:321:                               <a href={`https://wa.me/${o.shippingInfo.whatsappNumber.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer" className="text-[9px] uppercase tracking-wider bg-green-100 text-green-700 px-1.5 py-0.5 rounded ml-1 hover:bg-green-200 transition">
+src/pages/AdminOrders.tsx:343:                        <td className="py-4 pr-4 text-sm font-medium">${o.total?.toFixed(2)}</td>
+src/pages/AdminOrders.tsx:349:                              className={`text-[10px] uppercase tracking-widest px-2 py-1 border-0 rounded cursor-pointer ${o.status === 'processing' ? 'bg-amber-100 text-amber-800' : o.status === 'bottling' ? 'bg-indigo-100 text-indigo-800' : o.status === 'shipped' ? 'bg-blue-100 text-blue-800' : o.status === 'delivered' ? 'bg-green-100 text-green-800' : o.status === 'returned' ? 'bg-purple-100 text-purple-800' : 'bg-gray-100 text-gray-800'}`}
+src/pages/AdminCashManagement.tsx:139:      `${row.date},${row.totalSales},${row.expenses},${row.productCost},${row.profit},"${row.notes || ''}"`
+src/pages/AdminCashManagement.tsx:204:          value={`$${metrics.today?.totalSales.toLocaleString() || '0'}`}
+src/pages/AdminCashManagement.tsx:210:          value={`$${metrics.totalRev.toLocaleString()}`}
+src/pages/AdminCashManagement.tsx:216:          value={`$${metrics.monthlyProfit.toLocaleString()}`}
+src/pages/AdminCashManagement.tsx:217:          sub={`Weekly: $${metrics.weeklyProfit.toLocaleString()}`}
+src/pages/AdminCashManagement.tsx:222:          value={`$${metrics.bestDay?.totalSales.toLocaleString() || '0'}`}
+src/pages/AdminCashManagement.tsx:258:                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#6B7280' }} tickFormatter={(val) => `$${val}`} />
+src/pages/AdminCashManagement.tsx:278:                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: '#6B7280' }} tickFormatter={(val) => `$${val}`} />
+src/pages/AdminCashManagement.tsx:466:          <span className={`flex items-center text-xs font-medium ${trend >= 0 ? (invertTrend ? 'text-red-600' : 'text-emerald-600') : (invertTrend ? 'text-emerald-600' : 'text-red-600')}`}>
+src/pages/AdminSliders.tsx:68:      const url = editingId ? `/api/admin/sliders/${editingId}` : '/api/admin/sliders';
+src/pages/AdminSliders.tsx:75:          'Authorization': `Bearer ${token}`
+src/pages/AdminSliders.tsx:93:      const res = await fetch(`/api/admin/sliders/${id}`, {
+src/pages/AdminSliders.tsx:95:        headers: { 'Authorization': `Bearer ${token}` }
+src/pages/AdminLayout.tsx:24:            'Authorization': `Bearer ${token}`
+src/pages/AdminLayout.tsx:84:          ${isSidebarOpen ? 'w-64 max-w-[256px] px-6 py-8' : 'w-0 max-w-0 p-0 overflow-hidden'} 
+src/pages/AdminLayout.tsx:107:                className={`flex items-center gap-3 px-4 py-3 rounded-md transition-colors ${
+src/pages/AdminLayout.tsx:134:            className={`mr-4 p-2 rounded-md transition-colors ${isSidebarOpen ? 'text-brand-black/40 hover:bg-black/5 hover:text-brand-black' : 'text-brand-black hover:bg-black/5'}`}
+src/pages/Cart.tsx:40:                <Link to={`/product/${item.id}`} className="shrink-0 group">
+src/pages/Cart.tsx:54:                        <Link to={`/product/${item.id}`}>{item.name}</Link>
+src/pages/AdminDashboard.tsx:30:          fetch('/api/admin/orders', { headers: { 'Authorization': `Bearer ${token}` } }),
+src/pages/AdminDashboard.tsx:31:          fetch('/api/admin/users', { headers: { 'Authorization': `Bearer ${token}` } })
+src/pages/AdminDashboard.tsx:100:                <YAxis tick={{ fontSize: 12, fill: '#78716c' }} axisLine={false} tickLine={false} tickFormatter={(val) => `Rs. ${val}`} />
+src/pages/AdminDashboard.tsx:104:                  formatter={(value) => [`Rs. ${value}`, 'Sales']}
+src/components/layout/Newsletter.tsx:33:            errStr = `Invalid response: ${text.substring(0, 40)}`;
+src/components/layout/Marquee.tsx:28:              <span key={`first-${i}`} className="text-[10px] uppercase tracking-[0.2em] font-medium flex items-center gap-2">
+src/components/layout/Marquee.tsx:44:              <span key={`second-${i}`} className="text-[10px] uppercase tracking-[0.2em] font-medium flex items-center gap-2">
+src/components/layout/NewsletterPopup.tsx:52:            errStr = `Invalid response: ${text.substring(0, 40)}`;
+src/components/layout/Navbar.tsx:54:          headers: { 'Authorization': `Bearer ${token}` }
+src/components/layout/Navbar.tsx:237:              href={`/${link.toLowerCase().replace(' ', '-')}`}
+src/components/layout/Navbar.tsx:281:                    to={`/product/${product._id}`} 
+src/components/layout/Navbar.tsx:288:                          <img src={product.images[0]} alt={product.name} className={`w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-105 ${product.images.length > 1 ? 'group-hover:opacity-0' : ''}`} />
+src/components/layout/Navbar.tsx:458:                    href={`/${link.toLowerCase().replace(' ', '-')}`}
+src/components/home/ScentFinder.tsx:44:          if (!res.ok) throw new Error(`API Error ${res.url} ${res.status} ${res.statusText}`);
+src/components/home/ScentFinder.tsx:166:                        to={`/product/${recommendedProduct?._id || recommendedProduct?.id || 'demo'}`}
+src/components/home/ProductShowcase.tsx:79:          if (!res.ok) throw new Error(`API Error ${res.url} ${res.status} ${res.statusText}`);
+src/components/home/ProductShowcase.tsx:104:        headers: { 'Authorization': `Bearer ${token}` }
+src/components/home/ProductShowcase.tsx:111:          if (!res.ok) throw new Error(`API Error ${res.url} ${res.status} ${res.statusText}`);
+src/components/home/ProductShowcase.tsx:148:          'Authorization': `Bearer ${token}`
+src/components/home/ProductShowcase.tsx:247:                <ChevronDown className={`w-3 h-3 transition-transform duration-500 ease-[0.16,1,0.3,1] ${isFilterOpen ? 'rotate-180' : ''}`} />
+src/components/home/ProductShowcase.tsx:267:                          className={`block w-full text-left px-5 py-2.5 text-[10px] uppercase tracking-[0.15em] transition-all duration-300 ${activeFilter === option ? 'bg-brand-gold/10 text-brand-gold font-medium border-l-2 border-brand-gold' : 'text-brand-white/60 hover:bg-brand-gold hover:text-brand-black hover:pl-6'}`}
+src/components/home/ProductShowcase.tsx:287:                <ChevronDown className={`w-3 h-3 transition-transform duration-500 ease-[0.16,1,0.3,1] ${isSortOpen ? 'rotate-180' : ''}`} />
+src/components/home/ProductShowcase.tsx:307:                          className={`block w-full text-left px-5 py-2.5 text-[10px] uppercase tracking-[0.15em] transition-all duration-300 ${activeSort === option ? 'bg-brand-gold/10 text-brand-gold font-medium border-l-2 border-brand-gold' : 'text-brand-white/60 hover:bg-brand-gold hover:text-brand-black hover:pl-6'}`}
+src/components/home/ProductShowcase.tsx:326:              className={`px-6 py-2.5 rounded-full text-xs uppercase tracking-widest border transition-colors duration-500 ${activeFilter === filter ? 'bg-brand-gold text-brand-black border-brand-gold' : 'border-brand-white/20 text-brand-white/70 hover:border-brand-gold hover:text-brand-gold'}`}
+src/components/home/ProductShowcase.tsx:339:                  key={`skeleton-${i}`}
+src/components/home/ProductShowcase.tsx:373:                <Link to={`/product/${product.id}`} className="relative block aspect-[4/5] bg-brand-charcoal mb-8 overflow-hidden group-hover:opacity-90 transition-opacity duration-500 rounded-sm border border-brand-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+src/components/home/ProductShowcase.tsx:389:                    className={`absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center transition-all duration-300 active:scale-75 ${wishlistItems.includes(String(product.id)) ? 'text-brand-gold opacity-100' : 'text-brand-white drop-shadow-md opacity-0 group-hover:opacity-100 hover:text-brand-gold'}`}
+src/components/home/ProductShowcase.tsx:391:                    aria-label={`Toggle wishlist for ${product.name}`}
+src/components/home/ProductShowcase.tsx:408:                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${product.hoverImage && product.hoverImage !== product.image ? 'opacity-100 group-hover:opacity-0' : 'group-hover:scale-105'}`}
+src/components/home/ProductShowcase.tsx:414:                      alt={`${product.name} alternate view`}
+src/components/home/ProductShowcase.tsx:424:                  <Link to={`/product/${product.id}`} className="block">
+src/components/home/ProductShowcase.tsx:434:                        <Star key={i} className={`w-2.5 h-2.5 ${i < Math.round(product.rating) ? 'fill-brand-gold text-brand-gold' : 'text-brand-white/10'}`} />
+src/components/home/ProductShowcase.tsx:591:                    to={`/product/${quickViewProduct.id || quickViewProduct._id}`}
+src/components/home/CategoryPreview.tsx:67:                style={{ backgroundImage: `url(${category.image})` }}
