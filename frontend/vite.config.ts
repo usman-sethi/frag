@@ -19,6 +19,7 @@ export default defineConfig(({mode}) => {
       outDir: 'dist',
       target: 'es2022',
       cssCodeSplit: true,
+      emptyOutDir: true,
       rollupOptions: {
         output: {
           manualChunks: {

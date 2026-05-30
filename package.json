@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx backend/server.ts",
     "start": "node dist/server.cjs",
-    "build": "cd frontend && npx vite build && cd .. && esbuild backend/server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+    "build": "cd frontend && npx vite build --outDir ../dist --emptyOutDir && cd .. && esbuild backend/server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
     "preview": "cd frontend && npx vite preview",
     "clean": "rm -rf dist",
     "lint": "cd frontend && tsc --noEmit && cd ../backend && tsc --noEmit || true"

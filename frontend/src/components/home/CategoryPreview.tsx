@@ -2,6 +2,10 @@ import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
+import { Link } from 'react-router-dom';
+
+const MotionLink = motion.create(Link);
+
 const categories = [
   {
     title: "Men's Collection",
@@ -45,9 +49,9 @@ export function CategoryPreview() {
           const isPassive = hoveredIndex !== null && hoveredIndex !== index;
           
           return (
-            <motion.a
+            <MotionLink
               key={category.title}
-              href={category.href}
+              to={category.href}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               initial={{ opacity: 0, y: 30 }}
@@ -104,7 +108,7 @@ export function CategoryPreview() {
                   </motion.div>
                 </motion.div>
               </div>
-            </motion.a>
+            </MotionLink>
           );
         })}
       </div>
