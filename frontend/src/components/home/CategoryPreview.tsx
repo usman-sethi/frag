@@ -1,10 +1,7 @@
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
-
 import { Link } from 'react-router-dom';
-
-const MotionLink = motion.create(Link);
 
 const categories = [
   {
@@ -49,9 +46,8 @@ export function CategoryPreview() {
           const isPassive = hoveredIndex !== null && hoveredIndex !== index;
           
           return (
-            <MotionLink
+            <motion.div
               key={category.title}
-              to={category.href}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
               initial={{ opacity: 0, y: 30 }}
@@ -79,7 +75,8 @@ export function CategoryPreview() {
               <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-brand-black/50 to-transparent z-0 opacity-100 group-hover:opacity-90 transition-opacity duration-700" />
               <div className="absolute inset-0 bg-brand-black/20 group-hover:bg-transparent transition-colors duration-700 z-0" />
               
-              <div className="relative z-10 flex flex-col items-center justify-end h-full pb-20 w-full px-8">
+              <Link to={category.href} className="absolute inset-0 z-20" aria-label={`Go to ${category.title}`} />
+              <div className="relative z-10 flex flex-col items-center justify-end h-full pb-20 w-full px-8 pointer-events-none">
                 <motion.div 
                   className="overflow-hidden flex flex-col items-center"
                   animate={{ y: isMobile ? 0 : (isHovered ? -16 : 0) }}
@@ -108,7 +105,7 @@ export function CategoryPreview() {
                   </motion.div>
                 </motion.div>
               </div>
-            </MotionLink>
+            </motion.div>
           );
         })}
       </div>

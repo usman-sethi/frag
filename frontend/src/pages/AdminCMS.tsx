@@ -34,7 +34,7 @@ export default function AdminCMS() {
         const data = await res.json();
         setHeroTitle(data?.heroTitle || 'L\'Essence de l\'Élégance');
         setHeroSubtitle(data?.heroSubtitle || 'Unveiling the Essence Of Pure Luxury');
-        setHeroImage(data?.heroImage || '/amr.jpeg');
+        setHeroImage(data?.heroImage || 'https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1600&auto=format&fit=crop');
         setFeaturedText(data?.featuredText || 'Each drop is a masterpiece. Expertly blended and inspired by the modern aesthetic.');
         setVelvetProductId(data?.velvetProductId || '');
       }

@@ -80,7 +80,7 @@ export default function Category() {
              </Link>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-8 gap-y-12 sm:gap-y-16">
             {products.map((product) => (
               <Link key={product.id} to={`/product/${product.id}`} className="group flex flex-col h-full cursor-pointer">
                 <div className="relative block aspect-[4/5] bg-brand-black mb-6 overflow-hidden group-hover:opacity-90 transition-opacity duration-500 rounded-sm border border-brand-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.3)]">

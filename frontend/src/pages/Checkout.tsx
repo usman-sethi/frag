@@ -120,7 +120,7 @@ export default function Checkout() {
                 <input required type="email" name="email" value={shippingInfo.email} onChange={handleInputChange} className="w-full border-b border-brand-white/20 pb-2 px-2 focus:outline-none focus:border-brand-gold bg-transparent transition-colors text-brand-white" />
                 {validationErrors.email && <p className="text-red-500 text-xs mt-1">{validationErrors.email}</p>}
               </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs uppercase tracking-widest font-medium mb-2 opacity-70">First Name <span className="text-red-500">*</span></label>
                     <input required type="text" name="firstName" value={shippingInfo.firstName} onChange={handleInputChange} className="w-full border-b border-brand-white/20 pb-2 px-2 focus:outline-none focus:border-brand-gold bg-transparent transition-colors text-brand-white" />
@@ -154,7 +154,7 @@ export default function Checkout() {
                   <label className="block text-xs uppercase tracking-widest font-medium mb-2 opacity-70">Address <span className="text-red-500">*</span></label>
                   <input required type="text" name="address" value={shippingInfo.address} onChange={handleInputChange} className="w-full border-b border-brand-white/20 pb-2 px-2 focus:outline-none focus:border-brand-gold bg-transparent transition-colors text-brand-white" />
                 </div>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="col-span-1">
                     <label className="block text-xs uppercase tracking-widest font-medium mb-2 opacity-70">City <span className="text-red-500">*</span></label>
                     <input required type="text" name="city" value={shippingInfo.city} onChange={handleInputChange} className="w-full border-b border-brand-white/20 pb-2 px-2 focus:outline-none focus:border-brand-gold bg-transparent transition-colors text-brand-white" />

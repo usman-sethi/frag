@@ -39,11 +39,6 @@ app.use((req, res, next) => {
   if (req.headers['x-now-route-matches']) {
     req.url = req.originalUrl || req.url;
   }
-  // If it still doesn't start with /api, ensure it's handled properly
-  // This helps when Vercel rewrites to /api/index and express gets confused
-  if (!req.url.startsWith('/api') && req.url !== '/' && req.url !== '') {
-    req.url = '/api' + req.url;
-  }
   next();
 });
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, User, Heart, ShoppingBag, Menu, X, Plus, Minus, Trash2, ArrowRight, Phone } from 'lucide-react';
+import { Search, User, Heart, ShoppingBag, Menu, X, Plus, Minus, Trash2, ArrowRight, Phone, LogOut, Settings } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../../lib/utils';
 import { Link } from 'react-router-dom';
@@ -470,12 +470,24 @@ export function Navbar() {
                   </Link>
                 ))}
               </div>
+
+              {user?.role === 'admin' && (
+                <div className="mt-8 pt-8 border-t border-brand-white/10 flex flex-col gap-6">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-brand-gold/60 font-medium">Admin Options</span>
+                  <Link to="/admin" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-brand-white/80 hover:text-brand-gold transition-colors font-medium">
+                    <Settings className="w-5 h-5 text-brand-gold/80" /> Dashboard
+                  </Link>
+                  <Link to="/admin/products" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-brand-white/80 hover:text-brand-gold transition-colors font-medium">
+                    <ShoppingBag className="w-5 h-5 text-brand-gold/80" /> Products
+                  </Link>
+                </div>
+              )}
               
-              <div className="mt-auto pt-8 border-t border-brand-white/10 flex flex-col gap-6">
+              <div className="mt-8 pt-8 border-t border-brand-white/10 flex flex-col gap-6">
                 <span className="text-[10px] uppercase tracking-[0.2em] text-brand-gold/60 font-medium">Account</span>
                 <Link to={user ? (user.role === 'admin' ? '/admin' : '/account') : '/login'} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-brand-white/80 hover:text-brand-gold transition-colors font-medium">
                   <User className="w-5 h-5 text-brand-gold/80" />
-                  {user ? (user.role === 'admin' ? 'Admin Dashboard' : 'My Account') : 'Log In / Register'}
+                  {user ? 'My Profile' : 'Log In / Register'}
                 </Link>
                 <Link to="/wishlist" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-brand-white/80 hover:text-brand-gold transition-colors font-medium">
                   <Heart className="w-5 h-5 text-brand-gold/80" />
@@ -483,7 +495,7 @@ export function Navbar() {
                 </Link>
               </div>
 
-              <div className="mt-8 mb-8 pb-12 flex-shrink-0 flex flex-col gap-8">
+              <div className="mt-8 pb-32 flex-shrink-0 flex flex-col gap-8">
                   <span className="text-[10px] uppercase tracking-[0.2em] text-brand-white/30 border-b border-brand-white/10 pb-4">Contact</span>
                   <div className="flex flex-col gap-4">
                     <a href="https://wa.me/923119149100" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-brand-white/70 hover:text-brand-gold transition-colors group font-medium">
@@ -495,28 +507,20 @@ export function Navbar() {
                       0319-9303171
                     </a>
                   </div>
-
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-brand-white/30 border-b border-brand-white/10 pb-4 mt-4">Personal</span>
-                  <div className="flex flex-col gap-6">
-                    {user ? (
-                      <Link to={user.role === 'admin' ? '/admin' : '/account'} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-brand-white/70 hover:text-brand-gold transition-colors group font-medium">
-                        <span className="w-10 h-10 rounded-full border border-brand-white/20 flex items-center justify-center group-hover:bg-brand-gold group-hover:text-brand-white transition-colors"><User className="w-4 h-4"/></span> 
-                        My Account
-                      </Link>
-                    ) : (
-                      <Link to="/login" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-brand-white/70 hover:text-brand-gold transition-colors group font-medium">
-                        <span className="w-10 h-10 rounded-full border border-brand-white/20 flex items-center justify-center group-hover:bg-brand-gold group-hover:text-brand-white transition-colors"><User className="w-4 h-4"/></span> 
-                        Sign In
-                      </Link>
-                    )}
-                    <Link to="/wishlist" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-4 text-sm uppercase tracking-[0.2em] text-brand-white/70 hover:text-brand-gold transition-colors group font-medium">
-                      <span className="w-10 h-10 rounded-full border border-brand-white/20 flex items-center justify-center group-hover:bg-brand-gold group-hover:text-brand-white transition-colors">
-                        <Heart className="w-4 h-4"/>
-                      </span> 
-                      Wishlist {wishlistCount > 0 && <span className="text-brand-gold font-bold">({wishlistCount})</span>}
-                    </Link>
-                  </div>
               </div>
+
+              {/* Sticky Logout Button at Bottom */}
+              {user && (
+                <div className="fixed bottom-0 left-0 w-full max-w-[420px] bg-brand-charcoal border-t border-brand-white/10 p-6 z-10 backdrop-blur-md">
+                  <button 
+                    onClick={handleLogout}
+                    className="w-full flex items-center justify-center gap-3 bg-white/5 hover:bg-white/10 border border-brand-white/10 text-brand-white py-4 rounded-full transition-colors text-sm uppercase tracking-widest font-medium group"
+                  >
+                    <LogOut className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                    Sign Out
+                  </button>
+                </div>
+              )}
             </motion.div>
           </motion.div>
         )}
